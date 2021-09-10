@@ -1,42 +1,47 @@
 <?php
 include "menu.php";
-include_once(dirname(__FILE__). '/admin/inc/MySql.php');
+include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 ?>
 
 
-<section >
-  <hr />
+<section>
   <div class="baixo meio">
     <h1>As melhores bebidas para você</h1>
   </div>
-
-
-      <?php
-      $filtro = 'SELECT * FROM bebidas';
-
-      foreach ($pdo->query($filtro) as $row) {
-        $nome = ($row['nome']);
-        $preco = ($row['preco']);
-        $peso = ($row['peso']);
-        $marca = ($row['marca']);
-        $imagem = '<img class="" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
-      ?>
   <hr>
-  <div class="card-deck menor">
-    <div class="card">
-      <?php echo $imagem ?>
-      <div class="card-body">
+</section>
+
+
+<?php
+$filtro = 'SELECT * FROM bebidas';
+
+foreach ($pdo->query($filtro) as $row) {
+  $nome = ($row['nome']);
+  $preco = ($row['preco']);
+  $peso = ($row['peso']);
+  $marca = ($row['marca']);
+  $imagem = '<img class="" width="500px" height="500px" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
+?>
+ 
+ <div class="grid-container">
+    <div class="card-deck">
+      <div class="card">
+        <?php echo $imagem ?>
+        <div class="card-body">
           <h5 class="card-title"><?php echo $nome ?></h5>
+          <div>
+           <p class="card-text ca"><?php echo $preco ?></p>
+          </div>
           <p class="card-text"><?php echo $peso . '(ml)' ?></p>
-          <p class="card-text"><?php echo 'R$'. $preco  ?></p>
-      </div>
-      <div class="card-footer">
-          <small class="text-muted">Marca:<?php echo ' ' . $marca ?></small>
+          <p class="card-text"><?php echo 'Marca' . $marca ?></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Comprar</small>
+        </div>
       </div>
     </div>
-    <hr>
   </div>
-</section>
+
 <?php } ?>
 </body>
 
