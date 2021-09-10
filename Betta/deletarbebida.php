@@ -11,7 +11,7 @@ include 'admin/inc/MySql.php';
 
         if($sql->execute(array($codigo))){
             if ($sql->rowCount() > 0){
-                echo 'Aluno excluído com sucesso!';
+                echo 'Bebida excluída com sucesso!';
                 header('location:admbebida.php');
             } else {
                 echo 'Código não localizado';
