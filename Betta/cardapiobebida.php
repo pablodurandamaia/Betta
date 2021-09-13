@@ -30,13 +30,13 @@ foreach ($pdo->query($filtro) as $row) {
         <div class="card-body">
           <h5 class="card-title"><?php echo $nome ?></h5>
           <div>
-           <p class="card-text ca"><?php echo $preco ?></p>
+           <p class="card-text ca"><?php echo 'R$' . $preco ?></p>
           </div>
           <p class="card-text"><?php echo $peso . '(ml)' ?></p>
-          <p class="card-text"><?php echo 'Marca' . $marca ?></p>
+          <p class="card-text"><?php echo $marca ?></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Comprar</small>
+          <small class="text-muted"><a href="">Comprar</a></small>
         </div>
       </div>
     </div>
