@@ -39,7 +39,8 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                     <div class="dropdown-content">
                         <a href="index.php">Inicio</a>
                         <a href="cardapio.php">Cardápio</a>
-
+                        <a href="cardapiobebida.php">Bebidas</a>
+                        <!-- PHP -->
                         <?php if (!isset($_SESSION['nome'])) : ?>
                             <a href="login.php">Login</a>
                         <?php endif; ?>
