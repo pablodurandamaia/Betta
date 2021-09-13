@@ -31,27 +31,27 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
       <div class="card">
         <?php echo $imagem  ?>
         <div class="card-footer">
-          <p class="card-text"><?php echo $nome ?></p>
+          <p class="card-text"><?php echo 'Nome: ' . $nome ?></p>
         </div>
         <div class="card-body">
-          <p class="card-text"><?php echo $email ?></p>
+          <p class="card-text"><?php echo 'Email: ' . $email ?></p>
           <!--<p class="card-text"><?php //echo $senha 
                                     ?></p>-->
         </div>
         <div class="card-footer">
-          <p class="card-text"><?php echo $bairro ?></p>
+          <p class="card-text"><?php echo 'Bairro: ' . $bairro ?></p>
         </div>
         <div class="card-body">
-          <p class="card-text"><?php echo $rua ?></p>
+          <p class="card-text"><?php echo 'Rua: ' . $rua ?></p>
         </div>
         <div class="card-footer">
-          <p class="card-text"><?php echo $numero ?></p>
+          <p class="card-text"><?php echo 'Numero: ' . $numero ?></p>
         </div>
         <div class="card-body">
-          <p class="card-text"><?php echo $cep ?></p>
+          <p class="card-text"><?php echo 'CEP: ' . $cep ?></p>
         </div>
         <div class="card-footer">
-          <p class="card-text"><?php echo $telefone ?></p>
+          <p class="card-text"><?php echo 'Telefone: ' . $telefone ?></p>
         </div>
 
       </div>

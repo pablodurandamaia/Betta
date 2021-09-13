@@ -14,6 +14,13 @@ if($administrador != 1){
 ?>
 
     <h2 style=padding-top:200px;padding-bottom:50px;> Confira os dados: </h2>
+    <div>
+    <input type="button" class="btn btn-warning"  vaLue= "Cadastrar" onclick="parent.location='cadastro.php'">
+    </div>
+    <br>
+    <br>
+ 
+
 </body>
 
 
@@ -35,8 +42,9 @@ if ($sql->execute()){
         echo 'Telefone:'.$values['telefone'].'<br>';
         echo 'CPF:'.$values['cpf'].'<br>';
 
-        echo "<a href='alterar.php?id=".$values['Id_u']."'>(Alterar)</a>";
-        echo "<a href='deletar.php?id=".$values['Id_u']."'>(Excluir)</a>";
+        echo "<a class='btn btn-warning' href='alterarbebida.php?id=".$values['Id_u']."'>Alterar</a>";
+        echo "    ";                                        
+        echo "<a class='btn btn-warning' href='deletarbebida.php?id=".$values['Id_u']."'>Excluir</a>";
       
 
 
@@ -46,4 +54,3 @@ if ($sql->execute()){
 
 ?>
 
-<input type="button" class="btn btn-warning"  vaLue= "Cadastrar" onclick="parent.location='cadastro.php'">

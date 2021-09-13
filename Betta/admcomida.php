@@ -15,7 +15,7 @@ if($administrador != 1){
 
     <h2 style=padding-top:200px;padding-bottom:50px;> Confira os dados: </h2>
     <div>
-        <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-warning" onclick="parent.location='cadcomida.php'" value="Cadastrar"></input>
+        <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-warning" onclick="parent.location='cadcomida.php'" value="Cadastrar">
     </div>
     <br>
     <br>

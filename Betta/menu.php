@@ -11,6 +11,7 @@ session_start();
 // }
 
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
+//$imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : "";
 $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] : "";
 
 
@@ -67,10 +68,13 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                     </div>
                 <?php endif; ?>
                 <?php
-                if (isset($_SESSION['Id_u']))
-                    echo "<a href='perfilusuario.php?id=".$_SESSION['Id_u']."'><h3 class='lado'>$nome</h3></a>";
-                else
+                if (isset($_SESSION['Id_u'])){
+                    echo "<a href='perfilusuario.php?id=".$_SESSION['Id_u']."'><h3 class='lado'> $nome</h3></a>";
+                    echo $imagem = '<img class="" src="data:image/png;base64,' . base64_encode('imagem' ) . '">';
+                }else{
+                    //echo '<img src="admin/assets/imgs/iconeperfil.png" style=width:50px;height:50px; alt="">'
                     echo "<a href='login.php'><h3 class='lado'>Visitante</h3></a>";
+                }    
                 ?>
             </div>
 
