@@ -14,6 +14,7 @@ if (isset($_POST['login'])) {
         $info = $sql->fetchALL(PDO::FETCH_ASSOC);
              if (count($info) > 0) {
                  foreach($info as $key => $values){
+                    $_SESSION['Id_u']= $values['Id_u']; 
                      $_SESSION['nome']= $values['nome']; 
                      $_SESSION['email']= $values['email']; 
                      $_SESSION['administrador']= $values['administrador'];

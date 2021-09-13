@@ -45,7 +45,7 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                             <a href="login.php">Login</a>
                         <?php endif; ?>
                         <?php if (isset($_SESSION['nome'])) : ?>
-                            <a href="perfil.php">Perfil</a>
+                            <a href="perfilusuario.php">Perfil</a>
                         <?php endif; ?>
 
                         <?php if (isset($_SESSION['nome'])) : ?>
@@ -67,8 +67,13 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                     </div>
                 <?php endif; ?>
                 <?php
-                echo "<h3 class='lado'>$nome</h3>"
+                if (isset($_SESSION['Id_u']))
+                    echo "<a href='perfilusuario.php?id=".$_SESSION['Id_u']."'><h3 class='lado'>$nome</h3></a>";
+                else
+                    echo "<a href='login.php'><h3 class='lado'>Visitante</h3></a>";
                 ?>
+            </div>
+
             </div>
         </div>
     </section>
