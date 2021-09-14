@@ -5,7 +5,7 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 
 <section class="baixo meio">
   <div>
-    <h1>Cardápio</h1>
+    <h1 class="ti">Cardápio</h1>
   </div>
   <hr>
 </section>
@@ -36,7 +36,7 @@ foreach ($pdo->query($filtro) as $row) {
         </div>
         <div class="card-footer">
           <small class="text-muted"><?php echo $pais ?></small>
-          <small class="text-muted">Comprar</small>
+          <small class="text-muted lho"><a href="">Comprar</a></small>
         </div>
       </div>
     </div>
