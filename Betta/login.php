@@ -21,7 +21,7 @@ include_once(dirname(__FILE__) . "/admin/functions/login.usuario.php");
             <input type="password" name="senha" class="form-control" placeholder="Senha">
         </div>
     </div>
-    <div class="login">
+    <div class="login ra">
         <input type="submit" class="btn btn-warning" name="login" value="Entrar"></button>
         <a class="btn btn-warning" href="cadastro.php">Cadastro</a>
     </div>
