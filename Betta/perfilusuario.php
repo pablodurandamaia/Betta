@@ -10,6 +10,41 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
     <h1>Seu perfil</h1>
   </div>
 
+  <?php
+
+  if (isset($_GET['Id_u'])) {
+    $codigo = $_GET['Id_u'];
+
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE Id_u =" . $_SESSION['Id_u']);
+    if ($sql->execute(array($codigo))) {
+      $info = $sql->fetchALL(PDO::FETCH_ASSOC);
+      foreach ($info as $key => $values) {
+        $imagem = $values['imagem'];
+      }
+    }
+  }
+
+
+
+
+  if (isset($_POST['salvar'])) {
+    $codigo = $_POST['Id_u'];
+    $imagem = $_POST['imagem'];
+
+
+    $sql = $pdo->prepare("UPDATE usuarios SET Id_u=?,imagem=? WHERE Id_u=?");
+    if ($sql->execute(array($codigo, $imagem))) {
+      if ($sql->rowCount() > 0) {
+        echo 'você alterou sua imagem com sucesso';
+        header('location:perfilusuario.php');
+      }
+    } else {
+      echo 'Dados não alterados';
+    }
+  }
+
+
+  ?>
 
   <?php
   $filtro = 'SELECT * FROM usuarios WHERE Id_u = ' . $_SESSION['Id_u'];
@@ -30,6 +65,10 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
     <div class="card-deck menor">
       <div class="card">
         <?php echo $imagem  ?>
+        <form action="">
+          <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
+          <input type="submit" name="salvar" id="salvar" class="btn btn-warning" value="Salvar">
+        </form>
         <div class="card-footer">
           <p class="card-text"><?php echo 'Nome: ' . $nome ?></p>
         </div>
