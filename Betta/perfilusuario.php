@@ -24,7 +24,7 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
     $cep = ($row['cep']);
     $telefone = ($row['telefone']);
 
-    $imagem = '<img class="" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
+    $imagem = '<img style="width:500px;height:500px;" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
   ?>
     <hr>
     <div class="card-deck menor">
