@@ -3,6 +3,8 @@ include "menu.php";
 include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 ?>
 
+<link rel="stylesheet" href="perfil.css">
+
 
 <section>
   <hr />
@@ -58,17 +60,19 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
     $numero = ($row['numero']);
     $cep = ($row['cep']);
     $telefone = ($row['telefone']);
-
-    $imagem = '<img style="width:500px;height:500px;" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
+    $imagem = '<img style="width:150px;height:150px;" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
   ?>
     <hr>
-    <div class="card-deck menor">
+    <div class="card-deck" style="margin: 0 450px 0 450px;
+">
       <div class="card">
+        <div style="margin: 0 auto; border-radius: 100%;">
         <?php echo $imagem  ?>
-        <form action="">
-          <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
+      </div>
+       <!--  <form action="">
+           <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
           <input type="submit" name="salvar" id="salvar" class="btn btn-warning" value="Salvar">
-        </form>
+        </form>-->
         <div class="card-footer">
           <p class="card-text"><?php echo 'Nome: ' . $nome ?></p>
         </div>
