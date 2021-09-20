@@ -23,7 +23,7 @@ include_once(dirname(__FILE__) . "/admin/functions/login.usuario.php");
     </div>
     <div class="login meio">
         <input type="submit" class="btn btn-warning" name="login" value="Entrar"></button>
-        <input type="submit" class="btn btn-warning" name="cadastro" value="Cadastro"><a href="cadastro.php"></a></button>
+        <a class="btn btn-warning" href="cadastro.php">Cadastro</a>
     </div>
 </form>
 
