@@ -13,6 +13,7 @@ if($administrador != 1){
     header('location: index.php');
 }
 
+// funçao que recebe informaçoes do formulario pelo metodo POST e insere na tabela bebidas. 
 if (isset($_POST['cadastrar'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
@@ -32,8 +33,9 @@ if (isset($_POST['cadastrar'])) {
 ?>
    
     <div style=padding-top:200px;padding-left:2%;>
-     
+     <!-- titulo -->
         <h2> Cadastre aqui novas bebidas:</h2>
+        <!-- formulario onde sao inseridas informaçoes "e onde sao cadastradas as bebidas". -->
         <form action="" method="POST">
             <input type="text" name="nome" placeholder="Nome" required>
             <br>

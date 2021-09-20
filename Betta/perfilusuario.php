@@ -67,9 +67,9 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 ">
       <div class="card">
         <div style="margin: 0 auto; border-radius: 100%;">
-        <?php echo $imagem  ?>
-      </div>
-       <!--  <form action="">
+          <?php echo $imagem  ?>
+        </div>
+        <!--  <form action="">
            <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
           <input type="submit" name="salvar" id="salvar" class="btn btn-warning" value="Salvar">
         </form>-->

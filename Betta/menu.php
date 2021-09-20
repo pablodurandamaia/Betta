@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // $administrador = $_SESSION['administrador'];
@@ -74,6 +75,7 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                 } else {
                     echo "<a href='login.php'><h3 class='lado'>Visitante</h3></a>";
                     echo '<img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" class="imagem lado" alt="">';
+                 
                 }
                 ?>
             </div>

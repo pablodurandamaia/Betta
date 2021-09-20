@@ -3,6 +3,7 @@ include 'menu.php';
 include_once(dirname(__FILE__) . "/admin/functions/cadastro.usuario.php");
 ?>
 
+<!-- imagem do inicio-->
     <div class="container">
         <div class="row">
             <div class="imagem-top">
@@ -10,8 +11,9 @@ include_once(dirname(__FILE__) . "/admin/functions/cadastro.usuario.php");
             </div>
         </div>
     </div>
-    <form method="POST">
 
+    <!-- formulario para receber as informaçoes nele digitadas e enviar para a funçao-->
+    <form method="POST">
 
         <section class="cad">
             <div class="form-row">

@@ -16,6 +16,7 @@ if($administrador != 1){
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
 
+//seleciona todas as informaçoes da tabela bebidas para o campo cod_bebi "chave primaria".
     $sql = $pdo->prepare("SELECT * FROM bebidas WHERE cod_bebi = ?");
     if ($sql->execute(array($codigo))) {
         $info = $sql->fetchALL(PDO::FETCH_ASSOC);
@@ -33,7 +34,7 @@ if (isset($_GET['id'])) {
 
 
 
-
+//funçao que recebe as informaçoes pelo metodo POST e atualiza nos campos da tabela bebidas.
 if (isset($_POST['atualizar'])) {
     $codigo = $_POST['cod_bebi'];
     $nome = $_POST['nome'];
@@ -55,8 +56,9 @@ if (isset($_POST['atualizar'])) {
 
 
 <div style=padding-top:200px;padding-left:2%;>
-     
+     <!-- titulo -->
      <h2> altere os dados da bebida aqui:</h2>
+     <!-- formulario onde as informaçoes que a funçao usa sao informados. -->
      <form action="" method="POST">
      <input type="text" name="cod_bebi" vaLue="<?php echo $codigo ?>" required hidden>
          <input type="text" name="nome" vaLue="<?php echo $nome ?>" required>
