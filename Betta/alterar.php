@@ -16,6 +16,7 @@ if($administrador != 1){
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
 
+    //seleciona todas as informaçoes da tabela usuarios para o campo Id_u "chave primaria" 
     $sql = $pdo->prepare("SELECT * FROM usuarios WHERE Id_u = ?");
     if ($sql->execute(array($codigo))) {
         $info = $sql->fetchALL(PDO::FETCH_ASSOC);
@@ -36,7 +37,7 @@ if (isset($_GET['id'])) {
 
 
 
-
+//funçao que recolhe as novas informaçoes pelo metodo POST e atualiza em  todos os campos do banco de dados 
 if (isset($_POST['atualizar'])) {
     $codigo = $_POST['Id_u'];
     $nome = $_POST['nome'];
@@ -63,7 +64,7 @@ if (isset($_POST['atualizar'])) {
 
   <div style=padding-top:200px;padding-left:2%;>
 <form method="POST" action="">
-
+<!-- lugares onde as informaçoes sao inseridas, "para a funçao" -->
 <p><input type="text" name="Id_u" vaLue="<?php echo $codigo ?>" required hidden> Nome: <input type="text" name="nome" vaLue="<?php echo $nome ?>" required> CPF: <input type="text" name="cpf" vaLue="<?php echo $cpf ?>">
     <br /></p>
 <p>Email: <input type="text" name="email" vaLue="<?php echo $email ?>" required> Senha: <input type="password" name="senha" vaLue="<?php echo $senha ?>" required>
@@ -127,6 +128,7 @@ Rua: <input type="text" id="rua" name="rua" vaLue="<?php echo $rua ?>" >
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<!-- cria uma "mascara" que força o usuario a inserir as informaçoes de maneira correta -->
 <script type="text/javascript">
 $("#telefone").mask("(00) 0 0000-0000");
 $("#cep").mask("00000-000");

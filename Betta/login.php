@@ -11,7 +11,7 @@ include_once(dirname(__FILE__) . "/admin/functions/login.usuario.php");
     </div>
 </div>
 <form method="post" >
-    <div class="form-row suco po">
+    <div class="form-row suco po" style="display: block;">
         <div class="form-group col-6 meio">
             <label>Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email">

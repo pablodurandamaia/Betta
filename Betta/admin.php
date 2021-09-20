@@ -26,6 +26,8 @@ if($administrador != 1){
 
 <?php
 
+//seleciona todos os campos e informaçoes da tabela usuarios e exibe
+
 $sql = $pdo->prepare('SELECT * FROM usuarios');
 if ($sql->execute()){
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);
