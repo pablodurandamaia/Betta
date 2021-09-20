@@ -66,6 +66,7 @@ a {
     margin-right: 50px;
 }
 
+<<<<<<< HEAD
   @media screen and (max-width: 576px) {
     .body {
         width: 100%;
@@ -88,3 +89,8 @@ a {
     }
   }
 
+=======
+.po {
+    display: block;
+}
+>>>>>>> 6c583f19ba0c1f12a40678408934659bf7742473
