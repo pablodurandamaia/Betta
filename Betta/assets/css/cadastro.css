@@ -53,3 +53,9 @@ a:active {
     margin-right: 60px;
     margin-top: 35px;
 }
+
+@media (max-width: 1024px) and (min-width:500px) {
+    body {
+        width: 35%;
+    }
+}
