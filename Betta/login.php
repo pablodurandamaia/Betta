@@ -6,11 +6,6 @@ include_once(dirname(__FILE__) . "/admin/functions/login.usuario.php");
 <div class="container">
     <div class="row">
         <div class="imagem-top">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <img class="img-fluid" src="assets/imgs/desconto.png" style="padding: 5% 0 0 0;">
         </div>
     </div>
