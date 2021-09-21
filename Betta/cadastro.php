@@ -5,7 +5,8 @@ include_once(dirname(__FILE__) . "/admin/functions/cadastro.usuario.php");
 
     <div class="container">
         <div class="row">
-            <div class="imagem-top">
+            <div class="imagem-top" style="padding: 5% 0 0 0;
+">
                 <img class="img-fluid" src="assets/imgs/desconto.png" alt="">
             </div>
         </div>
@@ -13,8 +14,8 @@ include_once(dirname(__FILE__) . "/admin/functions/cadastro.usuario.php");
     <form method="POST">
 
 
-        <section class="cad">
-            <div class="form-row">
+        <section class="cad" style="display: inline-block;padding-left: 38%;">
+            <div class="form-row" >
                 <div class="form-group col-md-12">
                     <label>Nome</label>
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required>
@@ -115,7 +116,7 @@ include_once(dirname(__FILE__) . "/admin/functions/cadastro.usuario.php");
                     </div>
                 </div>
                 <!-- 5 -->
-                <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-warning" value="Cadastrar"></input>
+                <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-warning" style="margin-left: 36%;"" value="Cadastrar"></input>
         </section>
     </form>
     </div>
