@@ -36,7 +36,7 @@ foreach ($pdo->query($filtro) as $row) {
         </div>
         <div class="card-footer">
           <small class="text-muted"><?php echo $pais ?></small>
-          <small class="text-muted lho"><a href="">Comprar</a></small>
+          <small class="text-muted lho"><a href="comprar.php">Comprar</a></small>
         </div>
       </div>
     </div>

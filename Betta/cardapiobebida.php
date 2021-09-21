@@ -36,7 +36,7 @@ foreach ($pdo->query($filtro) as $row) {
           <p class="card-text"><?php echo $marca ?></p>
         </div>
         <div class="card-footer">
-          <small class="text-muted"><a href="">Comprar</a></small>
+          <small class="text-muted"><a href="comprar.php">Comprar</a></small>
         </div>
       </div>
     </div>
