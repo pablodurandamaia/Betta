@@ -13,6 +13,8 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 
 
 <?php
+
+// seleciona as informaçoes da tabela bebidas.
 $filtro = 'SELECT * FROM bebidas';
 
 foreach ($pdo->query($filtro) as $row) {
@@ -23,6 +25,7 @@ foreach ($pdo->query($filtro) as $row) {
   $imagem = '<img class="" width="500px" height="500px" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
 ?>
  
+ <!-- exibe na tela as informaçoes selecionadas, "incluindo imagens".  -->
  <div class="grid-container">
     <div class="card-deck">
       <div class="card">

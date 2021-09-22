@@ -1,5 +1,10 @@
 <?php
 
+define('HOME',"http://localhost/betta-PI/betta/Betta/");
+define('UPLOAD_FOLDER',realpath(dirname(__DIR__."/../../assets/uploads/")) . "/uploads/");
+
+
+
 define('HOST', '10.10.134.157:3308');
 define('DB', 'betta-db');
 define('USER', 'root');
@@ -16,5 +21,3 @@ try{
         echo'<br>';
         return false;
     }
-
-?>

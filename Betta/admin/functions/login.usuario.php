@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['Id_u']= $values['Id_u']; 
                      $_SESSION['nome']= $values['nome']; 
                      $_SESSION['email']= $values['email']; 
-                     $_SESSION['imagem']= $values['imagem']; 
+                     $_SESSION['img_src']= $values['img_src']; 
                      $_SESSION['administrador']= $values['administrador'];
                  }
             // echo 'você realizou seu login com sucesso';

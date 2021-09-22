@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+//include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 
 // $administrador = $_SESSION['administrador'];
 
@@ -12,7 +13,7 @@ session_start();
 // }
 
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
-$imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : "";
+$ $img_src = isset($_SESSION['img_src']) ? $_SESSION['img_src'] : "";
 $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] : "";
 
 
@@ -69,17 +70,27 @@ $administrador = isset($_SESSION['administrador']) ? $_SESSION['administrador'] 
                     </div>
                 <?php endif; ?>
                 <?php
-                if (isset($_SESSION['Id_u'])) {
-                    echo "<a href='perfilusuario.php?id=" . $_SESSION['Id_u'] . "'><h3 class='lado'> $nome</h3></a>";
-                    echo $imagem = '<img class="imagem lado" src="data:image/png;base64,' . base64_encode($_SESSION['imagem']) . '">';
-                } else {
+                if (isset($_SESSION['Id_u']))
+                    echo "<a href='perfilusuario.php?id=".$_SESSION['Id_u']."'><h3 class='lado'>$nome</h3></a>";
+                else
                     echo "<a href='login.php'><h3 class='lado'>Visitante</h3></a>";
-                    echo '<img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" class="imagem lado" alt="">';
-                 
-                }
+                    echo '<img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" class="imagem lado" alt="">'; 
                 ?>
             </div>
-
         </div>
         </div>
     </section>
+
+    <?php
+               /* if (isset($_SESSION['Id_u']))
+                    echo "<a href='perfilusuario.php?id=".$_SESSION['Id_u']."'><h3 class='lado'>$nome</h3></a>";
+                else
+                    echo "<a href='login.php'><h3 class='lado'>Visitante</h3></a>";
+                    echo '<img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" class="imagem lado" alt="">'; */
+                ?>
+
+    
+    
+   
+
+    

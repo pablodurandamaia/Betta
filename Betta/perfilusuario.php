@@ -1,7 +1,58 @@
 <?php
 include "menu.php";
 include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
+
+
+
+
+// Checa se a imagem é real ou um arquivo qualquer
+//echo UPLOAD_FOLDER;
+
+if (isset($_POST["arquivo"])) {
+
+  $nomeDoArquivo =  uniqid() . basename($_FILES["fileToUpload"]["name"]);
+  // 7523875285098.asuna.jpg
+
+
+  $target_file = UPLOAD_FOLDER . $nomeDoArquivo;
+  // c:\xammp\htdocs\pa\upload\$nomeDoAqruivo
+
+  $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if ($check !== false) {
+    // echo "Arquivo é uma imagem:  - " . $check["mime"] . ".";
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      // echo "O arquivo " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " foi enviado para o servidor.";
+
+      // /assets/uploads/aa.png              
+      $img_src = "assets/uploads/" . $nomeDoArquivo;
+
+      $sql = $pdo->prepare("UPDATE usuarios SET img_src=? WHERE Id_u=?");
+      $id_usu = $_SESSION['Id_u'];
+      if ($sql->execute(array($img_src, $id_usu))) {
+        if ($sql->rowCount() > 0) {
+          echo 'você alterou a imagem do seu cadastro';
+        } else {
+          echo 'Não achei ninguem';
+        }
+      } else {
+        echo 'Dados não alterados';
+      }
+    } else {
+      echo "Desculpe não fomos hard o suficiente para enviar seu arquivo. =(";
+    }
+  } else {
+    echo "Arquivo não é uma imagem.";
+  }
+}
+
+
+
+
 ?>
+
+
 
 <link rel="stylesheet" href="perfil.css">
 
@@ -11,42 +62,6 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
   <div class="baixo meio">
     <h1>Seu perfil</h1>
   </div>
-
-  <?php
-
-  if (isset($_GET['Id_u'])) {
-    $codigo = $_GET['Id_u'];
-
-    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE Id_u =" . $_SESSION['Id_u']);
-    if ($sql->execute(array($codigo))) {
-      $info = $sql->fetchALL(PDO::FETCH_ASSOC);
-      foreach ($info as $key => $values) {
-        $imagem = $values['imagem'];
-      }
-    }
-  }
-
-
-
-
-  if (isset($_POST['salvar'])) {
-    $codigo = $_POST['Id_u'];
-    $imagem = $_POST['imagem'];
-
-
-    $sql = $pdo->prepare("UPDATE usuarios SET Id_u=?,imagem=? WHERE Id_u=?");
-    if ($sql->execute(array($codigo, $imagem))) {
-      if ($sql->rowCount() > 0) {
-        echo 'você alterou sua imagem com sucesso';
-        header('location:perfilusuario.php');
-      }
-    } else {
-      echo 'Dados não alterados';
-    }
-  }
-
-
-  ?>
 
   <?php
   $filtro = 'SELECT * FROM usuarios WHERE Id_u = ' . $_SESSION['Id_u'];
@@ -60,19 +75,29 @@ include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
     $numero = ($row['numero']);
     $cep = ($row['cep']);
     $telefone = ($row['telefone']);
-    $imagem = '<img style="width:150px;height:150px;" src="data:image/png;base64,' . base64_encode($row['imagem']) . '">';
+    $img_src = ($row['img_src']);
+    //$imagem = '<img style="width:150px;height:150px;" src="data:image/png;base64,' . base64_encode($row['img_src']) . '">';
+
+
+
   ?>
     <hr>
-    <div class="card-deck" style="margin: 0 450px 0 450px;
-">
+    <div class="card-deck" style="margin: 0 450px 0 450px;">
       <div class="card">
         <div style="margin: 0 auto; border-radius: 100%;">
-          <?php echo $imagem  ?>
+          <?php if (strlen($img_src) > 0) : ?>
+            <img src="<?php echo HOME . $img_src; ?>" class="img-fluid">
+          <?php else : ?>
+            <img src="<?php echo HOME ?>/assets/imgs/profile.png" class="img-fluid">
+          <?php endif; ?>
         </div>
-        <!--  <form action="">
-           <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
-          <input type="submit" name="salvar" id="salvar" class="btn btn-warning" value="Salvar">
-        </form>-->
+        <form action="" method="post" enctype="multipart/form-data">
+          <p> Selecione uma imagem:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+          <p>
+            <input class="btn btn-warning" type="submit" value="Salvar" name="arquivo">
+        </form>
+
         <div class="card-footer">
           <p class="card-text"><?php echo 'Nome: ' . $nome ?></p>
         </div>
