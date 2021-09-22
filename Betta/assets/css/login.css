@@ -66,31 +66,8 @@ a {
     margin-right: 50px;
 }
 
-<<<<<<< HEAD
-  @media screen and (max-width: 576px) {
-    .body {
-        width: 100%;
-      }
-
-}
-
-  @media screen and (max-width: 768px) {
-   
-  }
-  @media screen and (max-width: 992px) {
-    .body {
-      width: 100%;
+@media (max-width: 1024px) and (min-width:500px) {
+    body {
+        width: 35%;
     }
-  }
-
-  @media screen and (max-width: 1200px) {
-    .body {
-      width: 100%;
-    }
-  }
-
-=======
-.po {
-    display: block;
 }
->>>>>>> 6c583f19ba0c1f12a40678408934659bf7742473

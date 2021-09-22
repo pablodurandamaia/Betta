@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 //include_once(dirname(__FILE__) . '/admin/inc/MySql.php');
 

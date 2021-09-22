@@ -85,6 +85,7 @@ if (isset($_POST["arquivo"])) {
     <div class="card-deck" style="margin: 0 450px 0 450px;">
       <div class="card">
         <div style="margin: 0 auto; border-radius: 100%;">
+<<<<<<< HEAD
           <?php if (strlen($img_src) > 0) : ?>
             <img src="<?php echo HOME . $img_src; ?>" class="img-fluid">
           <?php else : ?>
@@ -98,6 +99,14 @@ if (isset($_POST["arquivo"])) {
             <input class="btn btn-warning" type="submit" value="Salvar" name="arquivo">
         </form>
 
+=======
+        <?php echo $imagem  ?>
+      </div>
+       <!--  <form action="">
+           <input type="file" name="fields_upload[multi_edit][0][bf19122987928493131d5bf846637fbc]" class="textfield noDragDrop" id="field_11_3" size="10" onchange="return verificationsAfterFieldChange('bf19122987928493131d5bf846637fbc', '0','blob')">
+          <input type="submit" name="salvar" id="salvar" class="btn btn-warning" value="Salvar">
+        </form>-->
+>>>>>>> 898307c43faba039c02f3963bcb26851bf967abf
         <div class="card-footer">
           <p class="card-text"><?php echo 'Nome: ' . $nome ?></p>
         </div>

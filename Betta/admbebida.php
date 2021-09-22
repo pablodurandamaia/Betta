@@ -1,10 +1,7 @@
 <?php
-//inclui o menu
 include 'menu.php';
-//inclui o banco de dados
 include 'admin/inc/MySql.php';
 
-//verifica se a conta é adm
 $administrador = $_SESSION['administrador'];
 
 if(empty($_SESSION)){
@@ -17,10 +14,8 @@ if($administrador != 1){
 
 ?>
 
-<!-- titulo -->
     <h2 style=padding-top:200px;padding-bottom:50px;> Confira os dados: </h2>
     <div>
-        <!-- botao direcionando para cadastrar novas bebidas-->
         <input type="submit" name="cadastrar" id="cadastrar" class="btn btn-warning" onclick="parent.location='cadbebida.php'" value="Cadastrar">
     </div>
     <br>
@@ -30,7 +25,6 @@ if($administrador != 1){
 
 <?php
 
-//seleciona todos os campos e informaçoes da tabela bebidas e exibe na tela
 $sql = $pdo->prepare('SELECT * FROM bebidas');
 if ($sql->execute()){
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);

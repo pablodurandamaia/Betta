@@ -6,12 +6,12 @@ include_once(dirname(__FILE__) . "/admin/functions/login.usuario.php");
 <div class="container">
     <div class="row">
         <div class="imagem-top">
-            <img class="img-fluid" src="assets/imgs/desconto.png" alt="">
+            <img class="img-fluid" src="assets/imgs/desconto.png" style="padding: 5% 0 0 0;">
         </div>
     </div>
 </div>
 <form method="post" >
-    <div class="form-row suco po" style="display: block;">
+    <div class="form-row suco" style="padding: 0px 25%;display: block;">
         <div class="form-group col-6 meio">
             <label>Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email">
